@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/ceytek-labs/matomo-services-lite/refs/heads/0.x/art/banner.png" width="400" alt="Matomo Services Lite">
+    <img src="https://raw.githubusercontent.com/ceytek-labs/matomo-services-lite/refs/heads/1.x/art/banner.png" width="400" alt="Matomo Services Lite">
     <p align="center">
         <a href="https://packagist.org/packages/ceytek-labs/matomo-services-lite"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/ceytek-labs/matomo-services-lite"></a>
         <a href="https://packagist.org/packages/ceytek-labs/matomo-services-lite"><img alt="Latest Version" src="https://img.shields.io/packagist/v/ceytek-labs/matomo-services-lite"></a>
