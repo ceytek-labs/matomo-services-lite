@@ -1,0 +1,38 @@
+{
+    "name": "ceytek-labs/matomo-services-lite",
+    "description": "Matomo Services Lite is a lightweight and extendable library designed to help you manage data easily using the Matomo in your PHP projects.",
+    "keywords": [
+        "Matomo",
+        "Matomo Services",
+        "Matomo API",
+        "data updates",
+        "web analytics",
+        "track online visits",
+        "PHP",
+        "lite library",
+        "matomo-services-lite",
+        "automation"
+    ],
+    "homepage": "https://github.com/ceytek-labs/matomo-services-lite",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ceyhun-celik",
+            "email": "ceyhunbcelik@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CeytekLabs\\MatomoServicesLite\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.0|^8.0"
+    },
+    "support": {
+        "issues": "https://github.com/ceytek-labs/matomo-services-lite/issues",
+        "source": "https://github.com/ceytek-labs/matomo-services-lite"
+    }
+}
