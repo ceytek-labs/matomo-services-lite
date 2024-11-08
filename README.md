@@ -32,6 +32,7 @@ composer require ceytek-labs/matomo-services-lite
 
 - [Actions](#actions)
     - [Get](#actions-get)
+    - [Get Page Urls](#actions-get-page-urls)
 - [Devices Detection](#devices-detection)
     - [Get Type](#devices-detection-get-type)
 - [Sites Manager](#sites-manager)
@@ -62,6 +63,25 @@ $result = Matomo::make()
     ->setPeriod('<your-period>')
     ->setDate('<your-date>')
     ->get();
+
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
+
+#### Actions: Get Page Urls
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->actions()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->getPageUrls();
 
 echo '<pre>'; print_r($result);
 ```
