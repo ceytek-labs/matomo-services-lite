@@ -35,6 +35,8 @@ composer require ceytek-labs/matomo-services-lite
     - [Get Page Urls](#actions-get-page-urls)
 - [Devices Detection](#devices-detection)
     - [Get Type](#devices-detection-get-type)
+- [Events](#events)
+    - [Get Name](#events-get-name)
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
 - [Visits Summary](#visits-summary)
@@ -111,6 +113,35 @@ $result = Matomo::make()
     ->setPeriod('<your-period>')
     ->setDate('<your-date>')
     ->getType();
+
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
+
+## Events
+
+The Events API lets you request reports about your users' Custom Events.
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Devices Detection** document:
+
+**[⬆ Back to services](#services)**
+
+#### Events: Get Name
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->events()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->getName();
 
 echo '<pre>'; print_r($result);
 ```
