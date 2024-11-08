@@ -111,6 +111,6 @@ class VisitsSummaryMethod
             throw new \Exception('Error: '.curl_error($curl));
         }
 
-        return json_decode($response);
+        return (object) json_decode($response);
     }
 }
