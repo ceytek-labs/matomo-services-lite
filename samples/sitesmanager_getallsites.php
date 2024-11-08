@@ -2,10 +2,10 @@
 
 use CeytekLabs\MatomoServicesLite\Matomo;
 
-$allSites = Matomo::make()
+$result = Matomo::make()
     ->setApi('<your-api-url>')
     ->setToken('<your-token>')
     ->sitesManager()
     ->getAllSites();
 
-echo '<pre>'; print_r($allSites);
+echo '<pre>'; print_r($result);

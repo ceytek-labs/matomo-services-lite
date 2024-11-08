@@ -40,12 +40,14 @@ The SitesManager API gives you full control on Websites in Matomo (create, updat
 
 The following example demonstrates how to manage data in a **Sites Manager** document:
 
+**[⬆ Back to services](#services)**
+
 #### Sites Manager: Get All Sites
 
 ```php
 use CeytekLabs\MatomoServicesLite\Matomo;
 
-$allSites = Matomo::make()
+$result = Matomo::make()
     ->setApi('<your-api-url>')
     ->setToken('<your-token>')
     ->sitesManager()
