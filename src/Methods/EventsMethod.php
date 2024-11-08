@@ -108,7 +108,7 @@ class EventsMethod
         
         curl_setopt_array($curl, [
             CURLOPT_URL => $this->api.'?'.http_build_query([
-                'method' => 'Events.getName',
+                'method' => 'Events.getCategory',
                 'module' => $this->module,
                 'format' => $this->format,
                 'token_auth' => $this->token,
