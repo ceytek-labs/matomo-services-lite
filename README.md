@@ -30,12 +30,43 @@ composer require ceytek-labs/matomo-services-lite
 
 ## Services
 
+- [Actions](#actions)
+    - [Get](#actions-get)
 - [Devices Detection](#devices-detection)
     - [Get Type](#devices-detection-get-type)
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
 - [Visits Summary](#visits-summary)
     - [Get](#visits-summary-get)
+
+## Actions
+
+The Actions API lets you request reports for all your Visitor Actions: Page URLs, Page titles, Events, Content Tracking, File Downloads and Clicks on external websites.
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Actions** document:
+
+**[⬆ Back to services](#services)**
+
+#### Actions: Get
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->actions()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->get();
+
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
 
 ## Devices Detection
 
