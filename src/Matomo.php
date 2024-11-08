@@ -2,6 +2,7 @@
 
 namespace CeytekLabs\MatomoServicesLite;
 
+use CeytekLabs\MatomoServicesLite\Methods\DevicesDetectionMethod;
 use CeytekLabs\MatomoServicesLite\Methods\SitesManagerMethod;
 use CeytekLabs\MatomoServicesLite\Methods\VisitsSummaryMethod;
 
@@ -55,6 +56,11 @@ class Matomo
         $this->filterLimit = $filterLimit;
 
         return $this;
+    }
+
+    public function devicesDetection(): DevicesDetectionMethod
+    {
+        return DevicesDetectionMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);   
     }
 
     public function sitesManager(): SitesManagerMethod

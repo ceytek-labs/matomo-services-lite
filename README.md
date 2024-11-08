@@ -30,10 +30,41 @@ composer require ceytek-labs/matomo-services-lite
 
 ## Services
 
+- [Devices Detection](#devices-detection)
+    - [Get Type](#devices-detection-get-type)
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
 - [Visits Summary](#visits-summary)
     - [Get](#visits-summary-get)
+
+## Devices Detection
+
+The DevicesDetection API lets you access reports on your visitors devices, brands, models, Operating system, Browsers.
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Devices Detection** document:
+
+**[⬆ Back to services](#services)**
+
+#### Devices Detection: Get Type
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->devicesDetection()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->getType();
+
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
 
 ## Sites Manager
 
