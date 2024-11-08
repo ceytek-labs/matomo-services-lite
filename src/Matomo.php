@@ -6,6 +6,7 @@ use CeytekLabs\MatomoServicesLite\Methods\ActionsMethod;
 use CeytekLabs\MatomoServicesLite\Methods\DevicesDetectionMethod;
 use CeytekLabs\MatomoServicesLite\Methods\EventsMethod;
 use CeytekLabs\MatomoServicesLite\Methods\SitesManagerMethod;
+use CeytekLabs\MatomoServicesLite\Methods\UsersManagerMethod;
 use CeytekLabs\MatomoServicesLite\Methods\VisitsSummaryMethod;
 
 class Matomo
@@ -78,6 +79,11 @@ class Matomo
     public function sitesManager(): SitesManagerMethod
     {
         return SitesManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+    }
+
+    public function usersManager(): UsersManagerMethod
+    {
+        return UsersManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
     }
 
     public function visitsSummary(): VisitsSummaryMethod

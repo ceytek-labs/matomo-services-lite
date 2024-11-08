@@ -42,6 +42,8 @@ composer require ceytek-labs/matomo-services-lite
     - [Get Name From Action ID](#events-get-name-from-action-id)
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
+- [Users Manager](#users-manager)
+    - [Get Users With Site Access](#users-manager-get-users-with-site-access)
 - [Visits Summary](#visits-summary)
     - [Get](#visits-summary-get)
 
@@ -229,6 +231,34 @@ $result = Matomo::make()
     ->setToken('<your-token>')
     ->sitesManager()
     ->getAllSites();
+
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
+
+## Users Manager
+
+The UsersManager API lets you Manage Users and their permissions to access specific websites.
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Users Manager** document:
+
+**[⬆ Back to services](#services)**
+
+#### Users Manager: Get Users With Site Access
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->usersManager()
+    ->setIdSite('<your-id-site>')
+    ->setAccess('<your-access>')
+    ->getUsersWithSiteAccess();
 
 echo '<pre>'; print_r($result);
 ```
