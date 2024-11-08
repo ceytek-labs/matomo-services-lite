@@ -99,7 +99,6 @@ class DevicesDetectionMethod
                 'period' => $this->period,
                 'date' => $this->date,
                 'segment' => $this->segment ?? '',
-                'columns' => $this->columns ?? '',
             ]),
             CURLOPT_POST => 1,
             CURLOPT_RETURNTRANSFER => 1
@@ -111,6 +110,6 @@ class DevicesDetectionMethod
             throw new \Exception('Error: '.curl_error($curl));
         }
 
-        return json_decode($response);
+        return (object) json_decode($response);
     }
 }
