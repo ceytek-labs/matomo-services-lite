@@ -29,8 +29,11 @@ composer require ceytek-labs/matomo-services-lite
 ```
 
 ## Services
+
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
+- [Visits Summary](#visits-summary)
+    - [Get](#visits-summary-get)
 
 ## Sites Manager
 
@@ -53,7 +56,36 @@ $result = Matomo::make()
     ->sitesManager()
     ->getAllSites();
 
-echo '<pre>'; print_r($allSites);
+echo '<pre>'; print_r($result);
+```
+
+**[⬆ Back to services](#services)**
+
+## Visits Summary
+
+VisitsSummary API lets you access the core web analytics metrics (visits, unique visitors, count of actions (page views & downloads & clicks on outlinks), time on site, bounces and converted visits).
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Visits Summary** document:
+
+**[⬆ Back to services](#services)**
+
+#### Visits Summary: Get
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->visitsSummary()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->get();
+
+echo '<pre>'; print_r($result);
 ```
 
 ## Contributing

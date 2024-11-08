@@ -3,6 +3,7 @@
 namespace CeytekLabs\MatomoServicesLite;
 
 use CeytekLabs\MatomoServicesLite\Methods\SitesManagerMethod;
+use CeytekLabs\MatomoServicesLite\Methods\VisitsSummaryMethod;
 
 class Matomo
 {
@@ -59,5 +60,10 @@ class Matomo
     public function sitesManager(): SitesManagerMethod
     {
         return SitesManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+    }
+
+    public function visitsSummary(): VisitsSummaryMethod
+    {
+        return VisitsSummaryMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
     }
 }
