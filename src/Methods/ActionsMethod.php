@@ -12,6 +12,8 @@ class ActionsMethod
 
     private $format;
 
+    private $filterOffset;
+
     private $filterLimit;
 
     private $idSite;
@@ -32,7 +34,7 @@ class ActionsMethod
 
     private $flat;
 
-    public static function make(string $api, string $token, string $module, string $format, int $filterLimit): self
+    public static function make(string $api, string $token, string $module, string $format, int $filterOffset, int $filterLimit): self
     {
         $instance = new self;
 
@@ -40,6 +42,7 @@ class ActionsMethod
         $instance->token = $token;
         $instance->module = $module;
         $instance->format = $format;
+        $instance->filterOffset = $filterOffset;
         $instance->filterLimit = $filterLimit;
 
         return $instance;
@@ -130,6 +133,7 @@ class ActionsMethod
                 'module' => $this->module,
                 'format' => $this->format,
                 'token_auth' => $this->token,
+                'filter_offset' => $this->filterOffset,
                 'filter_limit' => $this->filterLimit,
                 'idSite' => $this->idSite,
                 'period' => $this->period,
@@ -172,6 +176,7 @@ class ActionsMethod
                 'module' => $this->module,
                 'format' => $this->format,
                 'token_auth' => $this->token,
+                'filter_offset' => $this->filterOffset,
                 'filter_limit' => $this->filterLimit,
                 'idSite' => $this->idSite,
                 'period' => $this->period,

@@ -19,6 +19,8 @@ class Matomo
 
     private $format = 'json';
 
+    private $filterOffset = 0;
+
     private $filterLimit = -1;
 
     public static function make(): self
@@ -54,6 +56,13 @@ class Matomo
         return $this;
     }
 
+    public function setFilterOffset(int $filterOffset): self
+    {
+        $this->filterOffset = $filterOffset;
+
+        return $this;
+    }
+
     public function setFilterLimit(int $filterLimit): self
     {
         $this->filterLimit = $filterLimit;
@@ -63,31 +72,31 @@ class Matomo
 
     public function actions(): ActionsMethod
     {
-        return ActionsMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return ActionsMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function devicesDetection(): DevicesDetectionMethod
     {
-        return DevicesDetectionMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return DevicesDetectionMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function events(): EventsMethod
     {
-        return EventsMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return EventsMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function sitesManager(): SitesManagerMethod
     {
-        return SitesManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return SitesManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function usersManager(): UsersManagerMethod
     {
-        return UsersManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return UsersManagerMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function visitsSummary(): VisitsSummaryMethod
     {
-        return VisitsSummaryMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterLimit);
+        return VisitsSummaryMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 }
