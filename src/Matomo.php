@@ -5,6 +5,7 @@ namespace CeytekLabs\MatomoServicesLite;
 use CeytekLabs\MatomoServicesLite\Methods\ActionsMethod;
 use CeytekLabs\MatomoServicesLite\Methods\DevicesDetectionMethod;
 use CeytekLabs\MatomoServicesLite\Methods\EventsMethod;
+use CeytekLabs\MatomoServicesLite\Methods\MarketingCampaignsReportingMethod;
 use CeytekLabs\MatomoServicesLite\Methods\SitesManagerMethod;
 use CeytekLabs\MatomoServicesLite\Methods\UsersManagerMethod;
 use CeytekLabs\MatomoServicesLite\Methods\VisitsSummaryMethod;
@@ -83,6 +84,11 @@ class Matomo
     public function events(): EventsMethod
     {
         return EventsMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
+    }
+
+    public function marketingCampaignsReporting(): MarketingCampaignsReportingMethod
+    {
+        return MarketingCampaignsReportingMethod::make($this->api, $this->token, $this->module, $this->format, $this->filterOffset, $this->filterLimit);
     }
 
     public function sitesManager(): SitesManagerMethod

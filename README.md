@@ -40,6 +40,8 @@ composer require ceytek-labs/matomo-services-lite
     - [Get Category](#events-get-category)
     - [Get Name](#events-get-name)
     - [Get Name From Action ID](#events-get-name-from-action-id)
+- [Marketing Campaigns Reporting](#marketing-campaigns-reporting)
+    - [Get Name](#marketing-campaigns-reporting-get-name)
 - [Sites Manager](#sites-manager)
     - [Get All Sites](#sites-manager-get-all-sites)
 - [Users Manager](#users-manager)
@@ -205,6 +207,34 @@ $result = Matomo::make()
     ->setDate('<your-date>')
     ->setIdSubtable('<your-id-subtable>')
     ->getNameFromActionId();
+
+echo '<pre>'; print_r($result);
+```
+**[⬆ Back to services](#services)**
+
+## Marketing Campaigns Reporting
+
+API for plugin MarketingCampaignsReporting
+
+### Example Usage
+
+The following example demonstrates how to manage data in a **Marketing Campaigns Reporting** document:
+
+**[⬆ Back to services](#services)**
+
+#### Marketing Campaigns Reporting: Get Name
+
+```php
+use CeytekLabs\MatomoServicesLite\Matomo;
+
+$result = Matomo::make()
+    ->setApi('<your-api-url>')
+    ->setToken('<your-token>')
+    ->marketingCampaignsReporting()
+    ->setIdSite('<your-id-site>')
+    ->setPeriod('<your-period>')
+    ->setDate('<your-date>')
+    ->getName();
 
 echo '<pre>'; print_r($result);
 ```
